@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>this is a random color generated project</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+</body>
+<script>
+    //generate a random color
+    const randomcolor = function(){
+        const hex = "0123456789ABCDEF"
+        let color = '#'
+        for(let i =0; i<6; i++){
+         color += hex[(Math.floor(Math.random()*16))]
+        }
+        return color
+    };
+    let intervalid
+    const startChaningColor = function(){
+       if(!intervalid){
+         intervalid = setInterval(changecolor, 1000)
+       }
+      function changecolor(){
+          document.body.style.backgroundColor = randomcolor();
+      }
+    };
+    const stopChaningColor = function(){
+        clearInterval(intervalid)
+        intervalid = null
+    };
+    
+    console.log(randomcolor);// math.floor represent the lowest value
+    document.querySelector('#start').addEventListener('click', startChaningColor)
+    document.querySelector('#stop').addEventListener('click', stopChaningColor)
+</script>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Time Clock</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .center {
+            margin-top: 80px;
+        }
+
+        #banner {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #clock {
+            font-size: 40px;
+            font-weight: bold;
+            background-color: black;
+            color: lime;
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="https://www.youtube.com" target="_blank">YouTube Channel</a>
+    </nav>
+
+    <div class="center">
+        <div id="banner">
+            <span>Your Local Time</span>
+        </div>
+        <div id="clock"></div>
+    </div>
+
+    <script>
+       
+            const clock = document.getElementById("clock");
+
+            // const time = new Date().toLocaleTimeString();
+            //  function showTime() {
+            // clock.innerHTML = time;
+            setInterval(function(){
+
+          
+            let date = new Date();
+            clock.innerHTML = date.toLocaleTimeString();
+         }, 1000);
+
+        
+      
+    </script>
+
+</body>
+</html>
