@@ -1,13 +1,15 @@
-import NetflixSeries from "./components/NetiflixSeries";
-import "./App.css";
 
 
-const App = () => {
+import { ReactMemo } from "./hooks/memo/first"
+
+
+function App() {
   return (
     <>
-      <NetflixSeries />
+    <ReactMemo/>  
     </>
   );
-};
+}
 
 export default App;
+
